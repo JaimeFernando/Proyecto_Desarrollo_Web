@@ -1,7 +1,7 @@
 <?php
 
-class Posision extends Modelo{
-    public $nombre_tabla = 'posision';
+class Posicion extends Modelo{
+    public $nombre_tabla = 'posicion';
     public $pk = 'id_posision';
     
     
@@ -17,7 +17,7 @@ class Posision extends Modelo{
     private $abreviatura;  
        
     
-    function Posision(){
+    function Posicion(){
         parent::Modelo();
     }
     
