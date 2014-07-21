@@ -344,8 +344,7 @@ $('#registro_continente').bootstrapValidator({
         } 
         });
 	
-	
-			$(".fancybox").fancybox({
+$(".fancybox").fancybox({
 				maxWidth	: 800,
 				maxHeight	: 600,
 				fitToView	: false,
@@ -356,9 +355,7 @@ $('#registro_continente').bootstrapValidator({
 				openEffect	: 'none',
 				closeEffect	: 'none'
 			});
-	
-	
-
+			
 $('#datetimepicker1').datetimepicker({language: 'es'});
 $('#datetimepicker2').datetimepicker({language: 'es'});
 	

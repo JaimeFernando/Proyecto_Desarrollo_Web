@@ -55,8 +55,8 @@
       <button type="submit" class="btn btn-default">Enviar</button>     
     </form>
    	<div align="center">
-        <p><a class="fancybox" data-fancybox-type="iframe" href="../ciudad/form_entrenador.php" role="button">Entrenador</a></p> 
-        <p><a class="fancybox" data-fancybox-type="iframe" href="../ciudad/form_jugador.php" role="button">Jugador</a></p> 
+        <p><a class="fancybox" data-fancybox-type="iframe" href="form_entrenador.php" role="button">Entrenador</a></p> 
+        <p><a class="fancybox" data-fancybox-type="iframe" href="form_jugador.php" role="button">Jugador</a></p> 
     </div>  
        	
 </div>

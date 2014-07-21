@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-datetimepicker.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/pygments-manni.css" />
     <!-- Add fancyBox -->
-    <link rel="stylesheet" href="../fancyBox/source/jquery.fancybox.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="../css/jquery.fancybox.css" type="text/css" media="screen"/>
    
     <link href="../css/carousel.css" rel="stylesheet">
   </head>
