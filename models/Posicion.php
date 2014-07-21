@@ -28,6 +28,38 @@ class Posicion extends Modelo{
         }
         return $rs;
     }
+    public function get_nombre(){
+        return $this->nombre;
+    } 
+
+    public function set_nombre($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_nombre($valor) ){
+            //$this->errores[] = "Este nombre (".$valor.") no es valido";
+        //}
+
+               
+        $this->nombre = trim($valor);
+        
+    }
+    public function get_abreviatura(){
+        return $this->abreviatura;
+    } 
+
+    public function set_abreviatura($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_nombre($valor) ){
+            //$this->errores[] = "Esta abreviatura (".$valor.") no es valida";
+        //}
+
+               
+        $this->abreviatura = trim($valor);
+        
+    }
 }
 
 ?>

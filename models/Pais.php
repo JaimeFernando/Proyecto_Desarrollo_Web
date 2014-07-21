@@ -31,6 +31,56 @@ class Pais extends Modelo{
         }
         return $rs;
     }
+    public function get_nombre(){
+        return $this->nombre;
+    } 
+
+    public function set_nombre($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_nombre($valor) ){
+            //$this->errores[] = "Este nombre (".$valor.") no es valido";
+        //}
+
+               
+        $this->nombre = trim($valor);
+        
+    }
+    public function get_bandera(){
+        return $this->bandera;
+    } 
+
+    public function set_bandera($valor){
+
+        $er = new Er();
+        $nombre = $_FILES['bandera']['name'];
+        $tipo = $_FILES['bandera']['type'];
+        $tamano = $_FILES['bandera']['size'];
+        if($tipo == "image/gif" || $tipo == "image/pjpeg" || $tipo == "image/png"){
+            if($tamano<=2000000){
+                 $this->bandera = trim($valor['name']);
+            }
+            
+            
+        }
+
+               
+       
+        
+    }
+    public function get_id_continente(){
+        return $this->id_continente;
+    } 
+
+    public function set_id_continente($valor){
+
+        $er = new Er();
+
+               
+        $this->id_continente = trim($valor);
+        
+    }
 }
 
 ?>

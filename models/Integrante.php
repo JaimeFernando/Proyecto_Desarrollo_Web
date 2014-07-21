@@ -39,6 +39,116 @@ class Integrante extends Modelo{
         }
         return $rs;
     }
+    public function get_nombre(){
+        return $this->nombre;
+    } 
+
+    public function set_nombre($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_nombre($valor) ){
+            //$this->errores[] = "Este nombre (".$valor.") no es valido";
+        //}
+
+               
+        $this->nombre = trim($valor);
+        
+    }
+    public function get_apellido(){
+        return $this->apellido;
+    } 
+
+    public function set_apellido($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_nombre($valor) ){
+            //$this->errores[] = "Este apellido (".$valor.") no es valido";
+        //}
+
+               
+        $this->apellido = trim($valor);
+        
+    }
+    public function get_peso(){
+        return $this->peso;
+    } 
+
+    public function set_peso($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_Numero_Real($valor) ){
+            //$this->errores[] = "Este peso (".$valor.") no es valido";
+        //}
+
+               
+        $this->peso = trim($valor);
+        
+    }
+    public function get_estatura(){
+        return $this->estatura;
+    } 
+
+    public function set_estatura($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_Numero_Real($valor) ){
+            //$this->errores[] = "Esta estatura (".$valor.") no es valida";
+        //}
+
+               
+        $this->estatura = trim($valor);
+        
+    }
+    public function get_foto(){
+        return $this->foto;
+    } 
+
+    public function set_foto($valor){
+
+        $er = new Er();
+        
+       $nombre = $_FILES['foto']['name'];
+        $tipo = $_FILES['foto']['type'];
+        $tamano = $_FILES['foto']['size'];
+        if($tipo == "image/gif" || $tipo == "image/pjpeg" || $tipo == "image/png"){
+            if($tamano<=2000000){
+                 $this->foto = trim($valor['name']);
+            }
+            
+            
+        }
+
+    }
+    public function get_edad(){
+        return $this->edad;
+    } 
+
+    public function set_edad($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_Numero_Entero($valor) ){
+            //$this->errores[] = "Esta edad (".$valor.") no es valida";
+        //}
+
+               
+        $this->edad = trim($valor);
+        
+    }
+    public function get_id_equipo(){
+        return $this->id_equipo;
+    }
+
+    public function set_id_equipo($valor){
+
+               
+        $this->id_equipo = trim($valor);
+        
+    }
 }
 
 ?>

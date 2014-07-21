@@ -28,6 +28,33 @@ class Estadio extends Modelo{
         }
         return $rs;
     }
+    public function get_nombre(){
+        return $this->nombre;
+    } 
+
+    public function set_nombre($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_nombre($valor) ){
+            //$this->errores[] = "Este nombre (".$valor.") no es valido";
+        //}
+
+               
+        $this->nombre = trim($valor);
+        
+    }
+    public function get_id_cuidad(){
+        return $this->id_cuidad;
+    } 
+
+    public function set_id_cuidad($valor){
+
+        $er = new Er();
+               
+        $this->id_cuidad = trim($valor);
+        
+    }
 }
 
 ?>

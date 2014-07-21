@@ -25,6 +25,22 @@ class Continente extends Modelo{
         }
         return $rs;
     }
+    public function get_nombre(){
+        return $this->nombre;
+    } 
+
+    public function set_nombre($valor){
+
+        $er = new Er();
+        
+        //if ( !$er->valida_nombre($valor) ){
+            //$this->errores[] = "Este nombre (".$valor.") no es valido";
+        //}
+
+               
+        $this->nombre = trim($valor);
+        
+    }    
 }
 
 ?>
