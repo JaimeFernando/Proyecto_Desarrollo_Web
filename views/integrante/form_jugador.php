@@ -1,9 +1,9 @@
 <?php 
  session_start();
-  include ('../layouts/header.php'); 
+  include ('../layouts/header_simple.php'); 
 ?>
 <div class="row">
-	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>
+	<div class="col-lg-4 col-lg-offset-4">
 	<div><h2 align="center">Registro de Jugadores</h2></div><br/>		
     <form role="form" id="registro_jugador" action="" method="post">
       <div class="form-group">
@@ -32,4 +32,4 @@
 </div>
 </div>
 
-<?php include ('../layouts/footer.php'); ?>
+<?php include ('../layouts/footer_simple.php'); ?>
