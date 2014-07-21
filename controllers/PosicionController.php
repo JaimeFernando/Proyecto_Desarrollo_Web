@@ -26,7 +26,21 @@
 			}
 			
 		}
-
+public function alertas()
+					{
+						
+							if($this->muestra_errores){
+							
+							echo '<div class="alert alert-danger">';
+		           
+									foreach($this->errores as $value){
+										echo "<p>$value</p>";
+									}
+								
+							echo "</div>";		                   	
+							}
+						  
+			}
 
 
 

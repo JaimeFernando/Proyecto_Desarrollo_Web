@@ -1,36 +1,37 @@
 <?php
-	class EquipoController extends Equipo{
+	class JugadorController extends Jugador{
 		
 		public $muestra_errores = false;
 		function __construct(){
-			parent::Equipo();
+			parent::Jugador();
 			 
 		}
 
 		
 
-		public function insertaEquipo($datos,$archivos){
-			//echo "<pre>datos:";
-    		//print_r($datos);
-    		//print_r($archivos);
-    		//echo "</pre>";
-			//$equipo = new Equipo();
-			$this->set_nombre($datos['nombre']);
-			$this->set_id_pais($datos['id_pais']);
-			$this->set_escudo($archivos['escudo']);
+		public function insertaJugador($datos){
+			echo "<pre>datos:";
+    		print_r($datos);    		
+    		echo "</pre>";
+			//$integrante = new Integrante();
+			$this->set_nombre($datos['numero']);
+			$this->set_id_integrante($datos['id_integrante']);
+			$this->set_id_posicion($datos['id_posicion']);
+			
+
 			if (count($this->errores)>0) {
-				//print_r($this->errores);
+				print_r($this->errores);
 				# code...
 				$this->muestra_errores = true;
 				
 			}
 			else{
 				$this->inserta($this->get_atributos());
-				move_uploaded_file($archivos['escudo']['tmp_name'], "../escudos/".$archivos['escudo']['name']);
-			}	
+				
+			}		
 			
 		}
-public function alertas()
+	public function alertas()
 					{
 						
 							if($this->muestra_errores){
@@ -45,6 +46,7 @@ public function alertas()
 							}
 						  
 			}
+
 
 
 

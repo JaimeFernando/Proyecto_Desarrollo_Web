@@ -1,6 +1,22 @@
 <?php 
- session_start();
-  include ('../layouts/header.php'); 
+      include ('../../libs/adodb5/adodb-pager.inc.php');
+      include ('../../libs/adodb5/adodb.inc.php');
+      include ('../../models/Conexion.php');
+      include ('../../models/Modelo.php');
+      include ('../../models/Integrante.php');
+      include ('../../controllers/IntegranteController.php');
+      include ('../../libs/Er.php');
+       include ('../layouts/header.php'); 
+ echo "<pre>datos:";
+  print_r($_POST);
+  print_r($_FILES);
+  echo"</pre>";
+ $integranteC = new IntegranteController();
+  if (isset($_POST['nombre'])){  
+  $integranteC->insertaIntegrante($_POST,$_FILES);
+    echo  $integranteC->alertas();
+  }
+  
 ?>
 <div class="row">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>

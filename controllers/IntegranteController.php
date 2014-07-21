@@ -22,6 +22,7 @@
 			$this->set_foto($archivos['foto']);
 			$this->set_edad($datos['edad']);
 			$this->set_id_equipo($datos['id_equipo']);
+		
 			if (count($this->errores)>0) {
 				//print_r($this->errores);
 				# code...
@@ -31,10 +32,24 @@
 			else{
 				$this->inserta($this->get_atributos());
 				move_uploaded_file($archivos['foto']['tmp_name'], "../fotos/".$archivos['foto']['name']);
-			}
-			
+			}		
 			
 		}
+	public function alertas()
+					{
+						
+							if($this->muestra_errores){
+							
+							echo '<div class="alert alert-danger">';
+		           
+									foreach($this->errores as $value){
+										echo "<p>$value</p>";
+									}
+								
+							echo "</div>";		                   	
+							}
+						  
+			}
 
 
 

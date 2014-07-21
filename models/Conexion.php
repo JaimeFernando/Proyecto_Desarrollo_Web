@@ -13,10 +13,10 @@ class Conexion {
     
     
     function Conexion(){
-        $this->db = ADONewConnection('mysql');
+        $this->db = ADONewConnection('mysqli');
         $this->db->debug = false;
 			       //ip     user      pass    bd
-        $this->db->Connect('localhost','usuario','password','base_de_datos');
+        $this->db->Connect('localhost','root','','fifa');
 
     }
     

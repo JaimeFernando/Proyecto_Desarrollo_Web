@@ -43,32 +43,40 @@ class Integrante extends Modelo{
         return $this->nombre;
     } 
 
-    public function set_nombre($valor){
-
-        $er = new Er();
-        
-        //if ( !$er->valida_nombre($valor) ){
-            //$this->errores[] = "Este nombre (".$valor.") no es valido";
-        //}
-
+    public function set_nombre($valor){         
+        $er = new Er();        
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Este nombre (".$valor.") no es valido";
+        }
+        $rs = $this->consulta_sql("select * from pais where nombre = '$valor'");
+        $rows = $rs->GetArray();        
+        if(count($rows) > 0){
+            $this->errores[] = "Este nombre (".$valor.") ya esta registrado"; 
+        }else{
+            $this->nombre = trim($valor);
+        }            
                
-        $this->nombre = trim($valor);
-        
+             
     }
     public function get_apellido(){
         return $this->apellido;
     } 
 
     public function set_apellido($valor){
-
-        $er = new Er();
-        
-        //if ( !$er->valida_nombre($valor) ){
-            //$this->errores[] = "Este apellido (".$valor.") no es valido";
-        //}
-
+         $er = new Er();        
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Este apellido (".$valor.") no es valido";
+        }
+        $rs = $this->consulta_sql("select * from integrante where apellido = '$valor'");
+        $rows = $rs->GetArray();        
+        if(count($rows) > 0){
+            $this->errores[] = "Este apellido (".$valor.") ya esta registrado"; 
+        }else{
+            $this->apellido = trim($valor);
+        }            
                
-        $this->apellido = trim($valor);
+      
+        
         
     }
     public function get_peso(){
@@ -76,15 +84,14 @@ class Integrante extends Modelo{
     } 
 
     public function set_peso($valor){
-
-        $er = new Er();
-        
-        //if ( !$er->valida_Numero_Real($valor) ){
-            //$this->errores[] = "Este peso (".$valor.") no es valido";
-        //}
-
-               
-        $this->peso = trim($valor);
+        $er = new Er();        
+        if ( !$er->valida_decimales($valor) ){
+            $this->errores[] = "Este peso (".$valor.") no es valido";        
+        }else{
+            $this->peso = trim($valor);
+        }
+                    
+       
         
     }
     public function get_estatura(){
@@ -92,17 +99,15 @@ class Integrante extends Modelo{
     } 
 
     public function set_estatura($valor){
+        $er = new Er();        
+        if ( !$er->valida_decimales($valor) ){
+            $this->errores[] = "Esta estatura (".$valor.") no es valido";        
+        }else{
+            $this->estatura = trim($valor);
+        }    
+                    
+     }
 
-        $er = new Er();
-        
-        //if ( !$er->valida_Numero_Real($valor) ){
-            //$this->errores[] = "Esta estatura (".$valor.") no es valida";
-        //}
-
-               
-        $this->estatura = trim($valor);
-        
-    }
     public function get_foto(){
         return $this->foto;
     } 
@@ -128,24 +133,19 @@ class Integrante extends Modelo{
     } 
 
     public function set_edad($valor){
+     $er = new Er();        
+        if ( !$er->validar_entero($valor) ){
+            $this->errores[] = "Esta edad(".$valor.") no es valida";        
+        }else{
+            $this->edad = trim($valor);
+        }        
+        }
 
-        $er = new Er();
-        
-        //if ( !$er->valida_Numero_Entero($valor) ){
-            //$this->errores[] = "Esta edad (".$valor.") no es valida";
-        //}
-
-               
-        $this->edad = trim($valor);
-        
-    }
     public function get_id_equipo(){
         return $this->id_equipo;
     }
 
-    public function set_id_equipo($valor){
-
-               
+    public function set_id_equipo($valor){               
         $this->id_equipo = trim($valor);
         
     }

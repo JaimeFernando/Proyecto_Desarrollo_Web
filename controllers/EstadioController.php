@@ -10,9 +10,9 @@
 		
 
 		public function insertaEstadio($datos){
-			//echo "<pre>datos:";
-    		//print_r($datos);
-    		//echo "</pre>";
+			echo "<pre>datos:";
+    		print_r($datos);
+    		echo "</pre>";
 			//$estadio = new Estadio();
 			$this->set_nombre($datos['nombre']);
 			$this->set_id_ciudad($datos['id_ciudad']);
@@ -29,6 +29,22 @@
 			
 			
 		}
+	public function alertas()
+					{
+						
+							if($this->muestra_errores){
+							
+							echo '<div class="alert alert-danger">';
+		           
+									foreach($this->errores as $value){
+										echo "<p>$value</p>";
+									}
+								
+							echo "</div>";		                   	
+							}
+						  
+			}
+
 
 
 

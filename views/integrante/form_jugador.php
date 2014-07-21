@@ -1,11 +1,27 @@
 <?php 
- session_start();
-  include ('../layouts/header.php'); 
+      include ('../../libs/adodb5/adodb-pager.inc.php');
+      include ('../../libs/adodb5/adodb.inc.php');
+      include ('../../models/Conexion.php');
+      include ('../../models/Modelo.php');
+      include ('../../models/Jugador.php');
+      include ('../../controllers/JugadorController.php');
+      include ('../../libs/Er.php');
+     include ('../layouts/header.php'); 
+     
+  echo "<pre>datos:";
+  print_r($_POST);  
+  echo"</pre>";
+
+  if (isset($_POST['nombre'])){  
+  $jugadorC = new JugadorController();
+  $jugadorC->insertaJugador($_POST);
+    echo  $jugadorC->alertas();
+  }
 ?>
 <div class="row">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>
 	<div><h2 align="center">Registro de Jugadores</h2></div><br/>		
-    <form role="form" id="registro_jugador" action="" method="post">
+    <form role="form" id="registro_jugador" action="" method="post"  enctype="multipart/form-data">
       <div class="form-group">
         <label for="numero">N&uacute;mero:</label>
         <input type="text" class="form-control" id="numero" name="numero" placeholder="N&uacute;mero">

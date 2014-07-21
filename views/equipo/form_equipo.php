@@ -1,6 +1,24 @@
 <?php 
- session_start();
-  include ('../layouts/header.php'); 
+
+      include ('../../libs/security.php');
+      include ('../../libs/adodb5/adodb-pager.inc.php');
+      include ('../../libs/adodb5/adodb.inc.php');
+      include ('../../models/Conexion.php');
+      include ('../../models/Modelo.php');
+      include ('../../models/Equipo.php');
+      include ('../../controllers/EquipoController.php');
+      include ('../../libs/Er.php');
+      include ('../layouts/header.php'); 
+
+  echo "<pre>datos:";
+  print_r($_POST);
+  print_r($_FILES);
+  echo"</pre>";
+ $equipoC = new EquipoController();
+  if (isset($_POST['nombre'])){  
+  $equipoC->insertaEquipo($_POST,$_FILES);
+    echo  $equipoC->alertas();
+  }
 ?>
 <div class="row">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>

@@ -33,18 +33,23 @@ class Pais extends Modelo{
     }
     public function get_nombre(){
         return $this->nombre;
+
     } 
 
     public function set_nombre($valor){
-
-        $er = new Er();
-        
-        //if ( !$er->valida_nombre($valor) ){
-            //$this->errores[] = "Este nombre (".$valor.") no es valido";
-        //}
-
-               
-        $this->nombre = trim($valor);
+        $er = new Er();        
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Este nombre (".$valor.") no es valido";
+        }
+        $rs = $this->consulta_sql("select * from pais where nombre = '$valor'");
+        $rows = $rs->GetArray();        
+        if(count($rows) > 0){
+            $this->errores[] = "Este nombre (".$valor.") ya esta registrado"; 
+        }else{
+            $this->nombre = trim($valor);
+        } 
+                   
+    
         
     }
     public function get_bandera(){
@@ -57,17 +62,12 @@ class Pais extends Modelo{
         $nombre = $_FILES['bandera']['name'];
         $tipo = $_FILES['bandera']['type'];
         $tamano = $_FILES['bandera']['size'];
-        if($tipo == "image/gif" || $tipo == "image/pjpeg" || $tipo == "image/png"){
+        if($tipo == "img/gif" || $tipo == "img/pjpeg" || $tipo == "img/png"){
             if($tamano<=2000000){
                  $this->bandera = trim($valor['name']);
-            }
+            }                      
+        }    
             
-            
-        }
-
-               
-       
-        
     }
     public function get_id_continente(){
         return $this->id_continente;
@@ -75,9 +75,7 @@ class Pais extends Modelo{
 
     public function set_id_continente($valor){
 
-        $er = new Er();
-
-               
+        $er = new Er();               
         $this->id_continente = trim($valor);
         
     }

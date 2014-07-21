@@ -2,7 +2,7 @@
 
 class Posicion extends Modelo{
     public $nombre_tabla = 'posicion';
-    public $pk = 'id_posision';
+    public $pk = 'id_posicion';
     
     
     public $atributos = array(
@@ -34,30 +34,35 @@ class Posicion extends Modelo{
 
     public function set_nombre($valor){
 
-        $er = new Er();
-        
-        //if ( !$er->valida_nombre($valor) ){
-            //$this->errores[] = "Este nombre (".$valor.") no es valido";
-        //}
-
-               
-        $this->nombre = trim($valor);
-        
+        $er = new Er();        
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Este nombre (".$valor.") no es valido";
+        }
+        $rs = $this->consulta_sql("select * from posicion where nombre = '$valor'");
+        $rows = $rs->GetArray();        
+        if(count($rows) > 0){
+            $this->errores[] = "Este nombre (".$valor.") ya esta registrado"; 
+        }else{
+            $this->nombre = trim($valor);
+        } 
     }
+
     public function get_abreviatura(){
         return $this->abreviatura;
     } 
 
     public function set_abreviatura($valor){
-
-        $er = new Er();
-        
-        //if ( !$er->valida_nombre($valor) ){
-            //$this->errores[] = "Esta abreviatura (".$valor.") no es valida";
-        //}
-
-               
-        $this->abreviatura = trim($valor);
+         $er = new Er();        
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Esta abreviatura (".$valor.") no es valida";
+        }
+        $rs = $this->consulta_sql("select * from posicion where abreviatura = '$valor'");
+        $rows = $rs->GetArray();        
+        if(count($rows) > 0){
+            $this->errores[] = "Esta abreviatura (".$valor.") ya esta registrada"; 
+        }else{
+            $this->abreviatura = trim($valor);
+        } 
         
     }
 }

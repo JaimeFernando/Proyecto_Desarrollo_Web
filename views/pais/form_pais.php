@@ -1,6 +1,30 @@
 <?php 
- session_start();
-  include ('../layouts/header.php'); 
+       include ('../../libs/adodb5/adodb-pager.inc.php');
+      include ('../../libs/adodb5/adodb.inc.php');
+      include ('../../models/Conexion.php');
+      include ('../../models/Modelo.php');
+      include ('../../models/Pais.php');
+      include ('../../controllers/PaisController.php');
+      include ('../../libs/Er.php');
+      include ('../layouts/header.php'); 
+
+  echo "<pre>datos:";
+  print_r($_POST);
+  print_r($_FILES);
+  echo"</pre>";
+ $paisC = new PaisController();
+  if (isset($_POST['nombre'])){  
+  $paisC->insertaPais($_POST,$_FILES);
+    echo  $paisC->alertas();
+  }
+   if (isset($_POST['bandera'])){  
+  $paisC->insertaPais($_POST,$_FILES);
+    echo  $paisC->alertas();
+  }
+   if (isset($_POST['id_continente'])){  
+  $paisC->insertaPais($_POST,$_FILES);
+    echo  $paisC->alertas();
+  }
 ?>
 <div class="row">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>

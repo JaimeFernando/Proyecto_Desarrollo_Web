@@ -2,7 +2,7 @@
 
 class Equipo extends Modelo{
     public $nombre_tabla = 'equipo';
-    public $pk = 'id_usuario';
+    public $pk = 'id_equipo';
     
     
     public $atributos = array(
@@ -36,15 +36,18 @@ class Equipo extends Modelo{
     } 
 
     public function set_nombre($valor){
-
-        $er = new Er();
-        
-        //if ( !$er->valida_nombre($valor) ){
-            //$this->errores[] = "Este nombre (".$valor.") no es valido";
-        //}
-
-               
-        $this->nombre = trim($valor);
+        $er = new Er();        
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Este nombre (".$valor.") no es valido";
+        }
+        $rs = $this->consulta_sql("select * from equipo where nombre = '$valor'");
+        $rows = $rs->GetArray();        
+        if(count($rows) > 0){
+            $this->errores[] = "Este nombre (".$valor.") ya esta registrado"; 
+        }else{
+            $this->nombre = trim($valor);
+        } 
+       
         
     }
 
@@ -53,8 +56,7 @@ class Equipo extends Modelo{
     }
 
     public function set_id_pais($valor){
-        $er = new Er();
-               
+                      
         $this->id_pais = trim($valor);
         
     }
@@ -73,13 +75,10 @@ class Equipo extends Modelo{
         if($tipo == "image/gif" || $tipo == "image/pjpeg" || $tipo == "image/png"){
             if($tamano<=2000000){
                  $this->escudo = trim($valor['name']);
-            }
+            }    
             
-            
-        }
-               
-        
-        
+        }     
+          
     }
 }
 
