@@ -20,27 +20,26 @@
                   <h1>¡¡¡Alemania Campeon!!!</h1>
                   <p>Alemania es ahora el Campeon Mundialista de Futbol...!!!<br/>
                         Felicidades Muchachos..!!!</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Mas info</a></p>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+              <img src="../img/liga_bancomer_mx_281013_2_Mx.jpg" alt="Second slide">
               <div class="container">
                 <div class="carousel-caption">
-                  <h1>Another example headline.</h1>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                  <h1>M&eacute;xico, Estamos Contigo</h1>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Mas info</a></p>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+              <img src="../img/ligraficamx_22062013_5Leon.jpg" alt="Third slide">
               <div class="container">
                 <div class="carousel-caption">
-                  <h1>One more for good measure.</h1>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                  <h1>Bicampeon</h1>
+                  <p>El Leon va por su tercer Campeonato</p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Galeria</a></p>
                 </div>
               </div>
             </div>
