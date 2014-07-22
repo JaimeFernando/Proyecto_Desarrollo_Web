@@ -16,7 +16,8 @@ class Conexion {
         $this->db = ADONewConnection('mysqli');
         $this->db->debug = false;
 			       //ip     user      pass    bd
-        $this->db->Connect('localhost','root','','fifa');
+		$this->db->Connect('localhost','fifa_2014','spedITIface','fifa');
+       // $this->db->Connect('localhost','root','','fifa');
 
     }
     

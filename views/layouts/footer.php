@@ -25,8 +25,8 @@
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js"></script>    
     <script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.mousewheel.pack.js"></script>    
-    <script type="text/javascript" src="../js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="../fancyBox/lib/jquery.mousewheel.pack.js"></script>
+    <script type="text/javascript" src="../fancyBox/source/jquery.fancybox.pack.js"></script>
     <script src="../js/ie-emulation-modes-warning.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../js/ie10-viewport-bug-workaround.js"></script>

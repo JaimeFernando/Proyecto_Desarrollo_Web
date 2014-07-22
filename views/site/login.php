@@ -18,7 +18,7 @@
       include ('../layouts/header.php');
 ?>
 <div class="row">
-
+<body background="../img/fondobrazil.jpg">
   <div class="col-md-6 col-md-offset-3">
     <div class="<?php echo ($login->muestra_errores)?'alert alert-danger':''; ?> ">
       <?php 

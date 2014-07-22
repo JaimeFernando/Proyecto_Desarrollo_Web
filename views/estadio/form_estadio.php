@@ -18,6 +18,7 @@
   }
 ?>
 <div class="row">
+<body background="../img/brasil-2014a.jpg">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>
 	<div><h2 align="center">Registro de Estadios</h2></div><br/>		
     <form role="form" id="registro_estadio" action="" method="post"  enctype="multipart/form-data">

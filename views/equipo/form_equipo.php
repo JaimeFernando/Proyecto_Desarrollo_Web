@@ -21,6 +21,7 @@
   }
 ?>
 <div class="row">
+<body background="../img/estadio.jpeg">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>
         <div><h2 align="center">Registro de Equipos</h2></div><br/>		
         <form role="form" id="registro_equipo" action="" method="post" enctype="multipart/form-data">
@@ -35,6 +36,7 @@
                 <option>001</option>
                 <option>002</option>                    
               </select>
+
           </div>  
           <div class="form-group">
             <label for="escudo">Escudo:</label>

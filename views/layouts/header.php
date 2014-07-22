@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-datetimepicker.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/pygments-manni.css" />
     <!-- Add fancyBox -->
-    <link rel="stylesheet" href="../css/jquery.fancybox.css" type="text/css" media="screen"/>
+     <link rel="stylesheet" href="../fancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
    
     <link href="../css/carousel.css" rel="stylesheet">
   </head>
@@ -40,7 +40,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="<?php echo BASEURL; ?>/views/site/inicio.php">Inicio</a></li>
-            
+          <?php if(!isset($SESSION['user'])){?>  
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registrar<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -53,37 +53,46 @@
                 <li><a href="../continente/form_continente.php">Continente</a></li>
               </ul>
             </li>
+          <?php } ?>
 
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listas<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../equipo/listaequipo.php">Lista de Equipos</a></li>
+                <li><a href="../integrante/listaintegrante.php">Lista de Integrantes</a></li>                
+              </ul>
+            </li>
           </ul>
 
-          <!--<ul class="nav navbar-nav navbar-right">
-				  <?php if (!isset($_SESSION['user']) ){?> 
-              	<li><a href="../site/login.php">
-                	<span class="glyphicon glyphicon-log-in"></span>Entrar</a>
-                </li>
-                <?php } else{ ?>
-                <li><a href="../site/logout.php">
-                	<span class="glyphicon glyphicon-log-in"></span>Salir</a>
-                </li>
-                <?php } ?>
-          </ul> -->
+          <ul class="nav navbar-nav navbar-right">
+  				  <?php if (!isset($_SESSION['user']) ){?> 
+                	<li><a href="../site/login.php">
+                  	<span class="glyphicon glyphicon-log-in"></span>Entrar</a>
+                  </li>
+            <?php } else{ ?>
+                  <li><a href="../site/logout.php">
+                  	<span class="glyphicon glyphicon-log-in"></span>Salir</a>
+                  </li>
+            <?php } ?>
+          </ul> 
+
           
 
         </div><!--/.nav-collapse -->
       </div>
     </div>
+
     
     <div class="container"><br/><br/><br/>
     <div class="masthead">
     <!--Las tablas de mostraran al precionar cada uno de los siguentes botones correspondientemente-->     
         <ul class="nav nav-justified">
-          <li><a href="#">Paises</a></li>
-          <li><a href="#">Equipos</a></li>
-          <li><a href="#">Jugadores</a></li>
-          <li><a href="#">Entrenandores</a></li>
-          <li><a href="#">Ciudades</a></li>
-          <li><a href="#">Estadios</a></li>
+          <li><a class="various" data-fancybox-type="iframe" href="../pais/form_pais.php" role="button">Paises</a></li>
+          <li><a class="various" data-fancybox-type="iframe" href="../equipo/form_equipo.php" role="button">Equipos</a></li>
+          <li><a class="various" data-fancybox-type="iframe" href="../integrante/form_integrante.php" role="button">Jugadores</a></li>
+          <li><a class="various" data-fancybox-type="iframe" href="../integrante/form_integrante.php" role="button">Entrenadores</a></li>
+          <li><a class="various" data-fancybox-type="iframe" href="../ciudad/form_ciudad.php" role="button">Ciudades</a></li>
+          <li><a class="various" data-fancybox-type="iframe" href="../estadio/form_estadio.php" role="button">Estadios</a></li>
         </ul>
       </div>
-    
-
+    </div>

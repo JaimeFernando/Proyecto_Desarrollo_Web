@@ -25,7 +25,7 @@
               </div>
             </div>
             <div class="item">
-              <img src="../img/liga_bancomer_mx_281013_2_Mx.jpg" alt="Second slide">
+              <img src="../img/mexico.jpg"" alt="Second slide">
               <div class="container">
                 <div class="carousel-caption">
                   <h1>M&eacute;xico, Estamos Contigo</h1>
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="item">
-              <img src="../img/ligraficamx_22062013_5Leon.jpg" alt="Third slide">
+              <img src="../img/Leon.jpg"" alt="Third slide">
               <div class="container">
                 <div class="carousel-caption">
                   <h1>Bicampeon</h1>

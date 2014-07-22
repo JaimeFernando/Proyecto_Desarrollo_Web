@@ -19,6 +19,7 @@
 
 ?>
 <div class="row">
+<body background="../img/fut.jpg">
 	<div class="col-lg-4 col-lg-offset-4"><br/>
 	<div><h2 align="center">Registro de Ciudades</h2></div><br/>		
     <form role="form" id="registro_ciudad" action="" method="post"  enctype="multipart/form-data">

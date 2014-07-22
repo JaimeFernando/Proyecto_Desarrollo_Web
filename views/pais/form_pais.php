@@ -1,5 +1,6 @@
 <?php 
-       include ('../../libs/adodb5/adodb-pager.inc.php');
+      include ('../../libs/security.php');
+      include ('../../libs/adodb5/adodb-pager.inc.php');
       include ('../../libs/adodb5/adodb.inc.php');
       include ('../../models/Conexion.php');
       include ('../../models/Modelo.php');
@@ -27,6 +28,7 @@
   }
 ?>
 <div class="row">
+<body background="../img/brasilmundial.jpg">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>
 	<div><h2>Registro de Paises</h2></div><br/>		
     <form role="form" id="registro_pais" action="" method="post" enctype="multipart/form-data">

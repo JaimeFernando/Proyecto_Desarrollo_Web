@@ -1,4 +1,6 @@
 <?php 
+      
+      include ('../../libs/security.php');
       include ('../../libs/adodb5/adodb-pager.inc.php');
       include ('../../libs/adodb5/adodb.inc.php');
       include ('../../models/Conexion.php');
@@ -18,6 +20,7 @@
   }
 ?>
 <div class="row">
+<body background="../img/agua.jpg">
 	<div class="col-lg-4 col-lg-offset-4"><br/><br/><br/>
 	<div><h2 align="center">Registro de Continentes</h2></div><br/>		
     <form role="form" id="registro_continente" action="" method="post"  enctype="multipart/form-data">
