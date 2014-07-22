@@ -8,10 +8,10 @@
       include ('../../controllers/IntegranteController.php');
       include ('../../libs/Er.php');
        include ('../layouts/header.php'); 
- echo "<pre>datos:";
-  print_r($_POST);
-  print_r($_FILES);
-  echo"</pre>";
+ //echo "<pre>datos:";
+  //print_r($_POST);
+  //print_r($_FILES);
+  //echo"</pre>";
  $integranteC = new IntegranteController();
   if (isset($_POST['nombre'])){  
   $integranteC->insertaIntegrante($_POST,$_FILES);
@@ -48,11 +48,7 @@
       </div>              
       <div class="form-group">
         <label for="id_equipo">Equipo:</label>
-          <select id="id_equipo" name="id_equipo" class="form-control">
-            <option>Selecciona</option>
-            <option>001</option>
-            <option>002</option>                    
-          </select>
+          <?php echo $integranteC->getDropDown('equipo','id_equipo','id_equipo');?>
       </div>              
       <button type="submit" class="btn btn-default">Enviar</button>     
     </form>

@@ -10,9 +10,9 @@
       include ('../../libs/Er.php');
       include ('../layouts/header.php'); 
 
-  echo "<pre>datos:";
-  print_r($_POST); 
-  echo"</pre>";
+  //echo "<pre>datos:";
+  //print_r($_POST); 
+  //echo"</pre>";
  $continenteC = new ContinenteController();
   if (isset($_POST['nombre'])){  
   $continenteC->insertaContinente($_POST);

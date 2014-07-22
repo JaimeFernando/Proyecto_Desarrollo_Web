@@ -9,10 +9,10 @@
       include ('../../libs/Er.php');
       include ('../layouts/header.php'); 
 
-  echo "<pre>datos:";
-  print_r($_POST);
-  print_r($_FILES);
-  echo"</pre>";
+ // echo "<pre>datos:";
+  //print_r($_POST);
+  //print_r($_FILES);
+  //echo"</pre>";
  $paisC = new PaisController();
   if (isset($_POST['nombre'])){  
   $paisC->insertaPais($_POST,$_FILES);
@@ -42,11 +42,7 @@
       </div>                 
       <div class="form-group">
         <label for="id_continente">Continente:</label>
-          <select id="id_continente" name="id_continente" class="form-control">
-            <option>Selecciona</option>
-            <option>001</option>
-            <option>002</option>                    
-          </select>
+          <?php echo $paisC->getDropDown('continente','id_continente','id_continente');?>
       </div>              
       <button type="submit" class="btn btn-default">Enviar</button>
     </form>

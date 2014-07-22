@@ -19,7 +19,7 @@
 			$this->set_bandera($archivos['bandera']['name']);
 			$this->set_id_continente($datos['id_continente']);
 			if (count($this->errores)>0) {
-				print_r($this->errores);
+				//print_r($this->errores);
 				# code...
 				$this->muestra_errores = true;
 			}
