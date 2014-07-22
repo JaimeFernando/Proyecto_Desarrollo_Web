@@ -8,9 +8,9 @@
       include ('../../libs/Er.php');
       include ('../layouts/header.php'); 
 
-      echo "<pre>datos:";
-  print_r($_POST); 
-  echo"</pre>";
+      //echo "<pre>datos:";
+  //print_r($_POST); 
+  //echo"</pre>";
  $ciudadC = new CiudadController();
   if (isset($_POST['nombre'])){  
   $ciudadC->insertaCiudad($_POST);

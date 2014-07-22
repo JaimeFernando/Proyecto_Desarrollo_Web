@@ -8,9 +8,9 @@
       include ('../../libs/Er.php');
       include ('../layouts/header.php'); 
 
-  echo "<pre>datos:";
-  print_r($_POST);
-  echo"</pre>";
+  //echo "<pre>datos:";
+  //print_r($_POST);
+  //echo"</pre>";
  $estadioC = new EstadioController();
   if (isset($_POST['nombre'])){  
   $estadioC->insertaEstadio($_POST);
@@ -27,11 +27,7 @@
       </div>              
       <div class="form-group">
         <label for="id_ciudad">Ciudad:</label>
-          <select id="id_ciudad" name="id_ciudad" class="form-control">
-            <option>Selecciona</option>
-            <option>001</option>
-            <option>002</option>                    
-          </select>
+          <?php echo $estadioC->getDropDown('ciudad','id_ciudad','id_ciudad');?>
       </div>              
       <button type="submit" class="btn btn-default">Enviar</button>
     </form>

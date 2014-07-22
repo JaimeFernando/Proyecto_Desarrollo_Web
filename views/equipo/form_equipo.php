@@ -1,6 +1,6 @@
 <?php 
 
-      include ('../../libs/security.php');
+      //include ('../../libs/Security.php');
       include ('../../libs/adodb5/adodb-pager.inc.php');
       include ('../../libs/adodb5/adodb.inc.php');
       include ('../../models/Conexion.php');
@@ -10,10 +10,10 @@
       include ('../../libs/Er.php');
       include ('../layouts/header.php'); 
 
-  echo "<pre>datos:";
-  print_r($_POST);
-  print_r($_FILES);
-  echo"</pre>";
+  //echo "<pre>datos:";
+  //print_r($_POST);
+  //print_r($_FILES);
+  //echo"</pre>";
  $equipoC = new EquipoController();
   if (isset($_POST['nombre'])){  
   $equipoC->insertaEquipo($_POST,$_FILES);
@@ -30,11 +30,7 @@
           </div>
           <div class="form-group">
             <label for="id_pais">Pais:</label>
-              <select id="id_pais" name="id_pais" class="form-control">
-                <option>Selecciona</option>
-                <option>001</option>
-                <option>002</option>                    
-              </select>
+                <?php echo $equipoC->getDropDown('pais','id_pais','id_pais');?>
           </div>  
           <div class="form-group">
             <label for="escudo">Escudo:</label>

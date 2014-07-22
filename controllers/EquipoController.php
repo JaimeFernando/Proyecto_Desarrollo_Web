@@ -30,7 +30,8 @@
 			}	
 			
 		}
-public function alertas()
+		
+		public function alertas()
 					{
 						
 							if($this->muestra_errores){
@@ -44,7 +45,7 @@ public function alertas()
 							echo "</div>";		                   	
 							}
 						  
-			}
+					}
 
 
 
