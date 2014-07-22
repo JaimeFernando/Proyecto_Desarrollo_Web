@@ -1,6 +1,6 @@
 <?php 
 
-      //include ('../../libs/Security.php');
+      include ('../../libs/Security.php');
       include ('../../libs/adodb5/adodb-pager.inc.php');
       include ('../../libs/adodb5/adodb.inc.php');
       include ('../../models/Conexion.php');
@@ -31,16 +31,15 @@
           </div>
           <div class="form-group">
             <label for="id_pais">Pais:</label>
-<<<<<<< HEAD
+
               <select id="id_pais" name="id_pais" class="form-control">
                 <option>Selecciona</option>
                 <option>001</option>
                 <option>002</option>                    
               </select>
 
-=======
-                <?php echo $equipoC->getDropDown('pais','id_pais','id_pais');?>
->>>>>>> ab4f2823555aa8666b6a0fb3a77a9c9a72dc0ad1
+
+
           </div>  
           <div class="form-group">
             <label for="escudo">Escudo:</label>
